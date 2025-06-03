@@ -42,10 +42,6 @@ Tiva_Surveillance_API.git/
 *.tmp
 *.swp
 
-# Word files (optional – only if you don’t want to track them)
-*.docx
-*.txt
-
 # Assets folders (optional)
 assets/
 Fonts/

@@ -1,0 +1,57 @@
+Tutorial for using Tiva surveillance system
+========================================
+1. Install Python 3.10.10
+•	Go to:
+offline_packages_python → python → python → python-3.10.10-amd64.exe
+•	Right-click on the installer and select "Run as administrator".
+•	During installation, check the box that says:
+Add python.exe to PATH
+________________________________________
+2. Fix Python Path in tiva_surveillance_api_service.py
+•	Open tiva_surveillance_api_service.py in a code editor.
+•	Set the correct Python installation path, e.g.:
+python = r"C:\Users\User-Name\AppData\Local\Programs\Python\Python310"
+Replace User-Name with your actual Windows username.
+________________________________________
+3. Install Required Python Libraries
+•	Open Command Prompt as Administrator.
+•	Navigate to your project directory:
+E:
+cd E:\Tiva_Surveillance_API
+•	Run the following command to install all required libraries from the offline package:
+pip install --no-index --find-links=offline_packages_python -r requirements.txt
+________________________________________
+4. Post-Install pywin32 Service Library
+•	Run this command to enable Windows service support:
+"C:\Users\User-Name\AppData\Local\Programs\Python\Python310\python.exe" "C:\Users\User-Name\AppData\Local\Programs\Python\Python310\Scripts\pywin32_postinstall.py" -install
+________________________________________
+5. Install the Tiva Surveillance Service
+In the same command prompt window:
+python tiva_surveillance_api_service.py install
+Note: On some systems, you may be able to run it without the python prefix if .py files are associated with Python:
+tiva_surveillance_api_service.py install
+However, if you encounter errors, always try the full command with python:
+python tiva_surveillance_api_service.py install
+You should see:
+Installing service TivaSurveillance
+Service installed
+
+________________________________________
+6. Start the Service
+python tiva_surveillance_api_service.py start
+You should see:
+Starting service TivaSurveillance
+________________________________________
+Other Service Commands
+•	Stop the service:
+python tiva_surveillance_api_service.py stop
+•	Remove the service:
+python tiva_surveillance_api_service.py remove
+•	Debug the service:
+python tiva_surveillance_api_service.py debug
+________________________________________
+Example Final Command Flow:
+C:\Windows\system32>E:
+E:\>cd E:\University\Semesters\Work\Tiva_Surveillance_API
+E:\University\Semesters\Work\Tiva_Surveillance_API>python tiva_surveillance_api_service.py install
+E:\University\Semesters\Work\Tiva_Surveillance_API>python tiva_surveillance_api_service.py start
