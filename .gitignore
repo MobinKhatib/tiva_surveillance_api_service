@@ -1,0 +1,56 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments & Python build
+venv*/
+env*/
+build/
+dist/
+*.egg-info/
+
+# Logs and runtime files
+*.log
+logs/
+
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# OS or IDE
+.vscode/
+.idea/
+
+# Offline or bundled packages
+offline_packages_python/
+model/
+# Git folders mistakenly inside repo
+Tiva_Surveillance_API.git/
+
+# Archives & binaries
+*.rar
+*.zip
+*.7z
+*.tar
+*.gz
+*.exe
+
+# Temporary or backup files
+*.bak
+*.tmp
+*.swp
+
+# Word files (optional – only if you don’t want to track them)
+*.docx
+*.txt
+
+# Assets folders (optional)
+assets/
+Fonts/
+client_get_it_babe_folder/
+W/
+
+# Manually excluded
+python
